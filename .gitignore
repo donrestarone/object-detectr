@@ -5,3 +5,9 @@ models/research/object_detection/outputs/*
 
 # exception to the rule
 !models/research/object_detection/outputs/.keep
+
+# exclude everything
+models/research/object_detection/test_images/*
+
+# exception to the rule
+!models/research/object_detection/test_images/.keep
