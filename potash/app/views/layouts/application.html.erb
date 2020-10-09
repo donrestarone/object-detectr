@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Restarone Image Classifier</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+    <div class="footer mt-auto py-5 footer-custom">
+      <div class="container">
+        <div class="row mx-auto">
+          <div class="text-left col-md-3 d-flex flex-column align-items-start justify-content-center px-5 align-self-start">
+            <strong>Built with &#128147; by <a target="_blank" href="https://www.restarone.com/">RESTARONE SOLUTIONS INC</a></strong>
+            <small class="d-block">&#169; 2020 Restarone Solutions Inc.</small>
+            <small class="d-block">All rights reserved.</small>
+          </div>
+          <div class="text-left col-md-3 d-flex flex-column align-items-start justify-content-center px-5 align-self-start mt-4 m-lg-0 m-md-0">
+            <strong >CONTACT US</strong>
+            <a href="mailto:contact@restarone.com" class="d-block text-yellow" style="color: inherit;">contact@restarone.com</a>
+            <p class="d-block">Tel:&nbsp;<strong class="text-yellow">416-770-1040</strong></p>
+          </div>
+          <div class="text-left col-md-3 d-flex flex-column align-items-start justify-content-center px-5 align-self-start mt-4 m-lg-0 m-md-0">
+            <strong>MENU</strong>
+            <ul>
+              <li>
+                <%= link_to "Home", root_path, class: "text-white" %>
+              </li>
+              </li>
+            </ul>
+          </div>
+          <div class="text-left col-md-3 d-flex flex-column align-items-start justify-content-center px-5 align-self-start mt-4 m-lg-0 m-md-0">
+            <strong>Social</strong>
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/restarone/" target="_blank" class="text-white">Instagram</a>
+              </li>
+              <li>
+                <a href="https://medium.com/@shashikejayatunge" target="_blank" class="text-white">Medium</a>
+              </li>
+              <li>
+                <a href="https://github.com/donrestarone" target="_blank" class="text-white">Github</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</html>

@@ -1,0 +1,7 @@
+*.tar.gz
+
+# exclude everything
+models/research/object_detection/outputs/*
+
+# exception to the rule
+!models/research/object_detection/outputs/.keep

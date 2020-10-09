@@ -1,0 +1,32 @@
+
+
+
+
+
+<div class="jumbotron mb-0">
+  <h1 class="display-4">Image Classifier</h1>
+  <p class="lead">Upload an image for analysis</p>
+  <hr class="my-4">
+  <%= form_for @image do |f| %>
+    <div class="form-group">
+      <%= f.label 'Please select an image you would like analyzed' %>
+      <%= f.file_field :captured_image, class: 'form-control-file', id: 'uploaded-image' %>
+      <div class="container text-center my-2">
+        <img src="" alt="" id="uploaded-image-preview" class="img-fluid w-50">
+      </div>
+      <br>
+      <% if flash[:error] %>
+        <p class="alert alert-danger" id="error-message"> <%= flash[:error] %> </p>
+      <% end %>
+      <div class="text-center">
+        <%= f.submit 'Analyze!', class: 'btn btn-primary btn-lg', id: 'start-analysis', data: {disable_with: "Analyzing, stand by"} %>
+        <button class="btn btn-primary btn-lg d-none" type="button" disabled id="started-analysis">
+          Analyzing
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span class="sr-only">Loading...</span>
+        </button>
+      </div>
+
+    </div>
+  <% end %>
+</div>

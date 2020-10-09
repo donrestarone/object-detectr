@@ -1,0 +1,18 @@
+
+
+
+<div class="jumbotron mb-0">
+  <h1 class="display-4">Result</h1>
+  <p class="lead">Here is your analysis</p>
+  <hr class="my-4">
+  <div class="d-block text-center my-4">
+    <%= link_to 'Analyze another image', root_path, class: 'btn btn-primary btn-lg' %>
+  </div>
+  <% if @analyzed_image&.analyzed_image %>
+    <div class="container-fluid text-center">
+      <%= image_tag url_for(@analyzed_image.analyzed_image), class: 'img-fluid' %>
+    </div>
+  <% else %>
+    <p>Oh no, I couldnt figure out what was in that image. Give me another shot?</p>
+  <% end %>
+</div>
