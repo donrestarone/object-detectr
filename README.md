@@ -7,6 +7,7 @@ A tensorflow object detection model served to the internet on a Rails server.
 [Troubleshooting](#troubleshooting)
   
 <a name="demo"/>
+
 ## Demo:
 The tensorflow model integrated into this app is quite good at detecting people
 
@@ -27,6 +28,7 @@ Here are a few more detections using this application.
 ![cat and couch detection](https://user-images.githubusercontent.com/35935196/95641584-48915b80-0a71-11eb-90f6-da963a0ed40b.png)
 
 <a name="install"/>
+
 ## Installation
 ### FOR THE AI SIDE (setup protoc, python and install dependencies + script)
 The python environment is setup assuming that you are using pyenv and have already installed and set the python version in the project directory
@@ -58,6 +60,7 @@ rails s
 ```
 
 <a name="troubleshooting"/>
+
 ## troubleshooting
 
 1. if Python cannot be found when Ruby makes the system call in potash/app/controllers/images_controller.rb
