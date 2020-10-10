@@ -9,15 +9,21 @@ A tensorflow object detection model served to the internet on a Rails server.
 <a name="demo"/>
 ## Demo:
 The tensorflow model integrated into this app is quite good at detecting people
+
 ![Demo of object detection (humans and cars)](https://media.giphy.com/media/OHpkVYXfKsLQunwScU/giphy.gif)
 
 Its also an excellent cat detector
+
 ![Demo of object detection (cat)](https://media.giphy.com/media/2PS7JUvUGHtnXO7UJY/giphy.gif)
 
 Here are a few more detections using this application.
+
 ![people detection](https://user-images.githubusercontent.com/35935196/95641582-47602e80-0a71-11eb-933e-8571122a33f4.png)
+
 ![food detection](https://user-images.githubusercontent.com/35935196/95641586-49c28880-0a71-11eb-9098-01f519517f04.png)
+
 ![dog, tv and human detection](https://user-images.githubusercontent.com/35935196/95641585-4929f200-0a71-11eb-8e92-edcb6ab543ba.png)
+
 ![cat and couch detection](https://user-images.githubusercontent.com/35935196/95641584-48915b80-0a71-11eb-90f6-da963a0ed40b.png)
 
 <a name="install"/>
