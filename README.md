@@ -2,9 +2,9 @@
 A tensorflow object detection model served to the internet on a Rails server.
 
 ##### Table of Contents  
-  [Demo](#demo)
-  [Installation](#install)
-  [Troubleshooting](#troubleshooting)
+[Demo](#demo)
+[Installation](#install)
+[Troubleshooting](#troubleshooting)
   
 <a name="demo"/>
 ## Demo:
