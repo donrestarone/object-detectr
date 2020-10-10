@@ -43,7 +43,7 @@ python --version
 
 jump to the models research directory and run the build and install scripts
 ``` bash
-cd potassium/models/research
+cd object_detectr/models/research
 python setup.py build
 python setup.py install
 ```
