@@ -26,7 +26,7 @@ Here are a few more detections using this application.
 
 ![food detection](https://user-images.githubusercontent.com/35935196/95641586-49c28880-0a71-11eb-9098-01f519517f04.png)
 
-![dog, tv and human detection](https://user-images.githubusercontent.com/35935196/95641585-4929f200-0a71-11eb-8e92-edcb6ab543ba.png)
+![horse and human detection](https://user-images.githubusercontent.com/35935196/95678138-b1bfbe80-0b98-11eb-90dd-5fcc49ed5794.png)
 
 ![cat and couch detection](https://user-images.githubusercontent.com/35935196/95641584-48915b80-0a71-11eb-90f6-da963a0ed40b.png)
 
@@ -40,7 +40,7 @@ ensure that python version is 3.7.9
 ``` bash
 python --version
 ```
-
+Clone the repository
 jump to the models research directory and run the build and install scripts
 ``` bash
 cd object_detectr/models/research
@@ -56,6 +56,7 @@ python -m pip install TensorFlow==1.15 lxml pillow matplotlib jupyter contextlib
 
 ### FOR THE RAILS SIDE
 ```bash
+cd object_detectr/potash
 bundle install
 rails db:create
 rails db:migrate
