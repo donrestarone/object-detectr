@@ -58,7 +58,7 @@ class ImagesController < ApplicationController
     path_to_analyzed_images = "#{path_to_python}/outputs/*"
     stat = Sys::Filesystem.stat("/")
     mb_available = stat.block_size * stat.blocks_available / 1024 / 1024
-    if !(mb_available < 100)
+    if mb_available < 100
       Image.all.destroy_all
       system("rm -rf #{path_to_active_storage}")
       system("rm -rf #{path_to_test_images}")
