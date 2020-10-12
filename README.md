@@ -35,7 +35,7 @@ Here are a few more detections using this application.
 ## Installation
 ### FOR THE AI SIDE (setup protoc, python and install dependencies + script)
 The python environment is setup assuming that you are using pyenv and have already installed and set the python version in the project directory
-
+If you are setting up python from scratch (like on a server) you can use this gist: https://gist.github.com/donrestarone/ccca19bb6ded91ca3fb6d71f46339899
 ensure that python version is 3.7.9
 ``` bash
 python --version
@@ -55,6 +55,8 @@ python -m pip install TensorFlow==1.15 lxml pillow matplotlib jupyter contextlib
 ```
 
 ### FOR THE RAILS SIDE
+If you are setting up rails from scratch (like on a server) you can use this gist: https://gist.github.com/donrestarone/0ebe1e87b39f0f92f850c1da861e85de
+
 ```bash
 cd object_detectr/potash
 bundle install
