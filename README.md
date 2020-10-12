@@ -34,9 +34,11 @@ Here are a few more detections using this application.
 
 ## Installation
 ### FOR THE AI SIDE (setup protoc, python and install dependencies + script)
-The python environment is setup assuming that you are using pyenv and have already installed and set the python version in the project directory
-If you are setting up python from scratch (like on a server) you can use this gist: https://gist.github.com/donrestarone/ccca19bb6ded91ca3fb6d71f46339899
-ensure that python version is 3.7.9
+
+1. The python environment is setup assuming that you are using pyenv and have already installed and set the python version in the project directory
+2. [If you are setting up python from scratch you can use this gist](https://gist.github.com/donrestarone/ccca19bb6ded91ca3fb6d71f46339899)
+3. ensure that python version is 3.7.9
+
 ``` bash
 python --version
 ```
@@ -69,7 +71,7 @@ rails s
 
 ## troubleshooting
 
-1. if Python cannot be found when Ruby makes the system call in potash/app/controllers/images_controller.rb
+1. if Python cannot be found when Ruby makes the system call in potash/app/controllers/images_controller.rb 
 you can try explicitly pointing to the python version in your $PATH like so:
 ```ruby
     system("cd #{path_to_python} ; /home/yourUserName/.pyenv/shims/python run.py #{file_name}")
