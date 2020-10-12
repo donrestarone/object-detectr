@@ -1,5 +1,8 @@
+
 class ImagesController < ApplicationController
   before_action :image_params, only: [:create]
+  before_action :ensure_storage_available, only: [:new, :index]
+
   def create
     analysis_session_token = current_visit.visitor_token
     path_to_rails = Rails.root.to_s.split('/')
@@ -33,6 +36,7 @@ class ImagesController < ApplicationController
   end
 
   def index
+    redirect_to new_image_path
   end
 
   private 
@@ -43,5 +47,22 @@ class ImagesController < ApplicationController
       return
     end
     params.require(:image).permit(:captured_image)
+  end
+
+  def ensure_storage_available
+    path_to_rails = Rails.root.to_s.split('/')
+    path_to_rails.pop
+    path_to_python =  "#{path_to_rails.join('/')}/models/research/object_detection"
+    path_to_active_storage = "#{path_to_rails.join('/')}/storage/*"
+    path_to_test_images = "#{path_to_python}/test_images/*"
+    path_to_analyzed_images = "#{path_to_python}/outputs/*"
+    stat = Sys::Filesystem.stat("/")
+    mb_available = stat.block_size * stat.blocks_available / 1024 / 1024
+    if !(mb_available < 100)
+      Image.all.destroy_all
+      system("rm -rf #{path_to_active_storage}")
+      system("rm -rf #{path_to_test_images}")
+      system("rm -rf #{path_to_analyzed_images}")
+    end
   end
 end
