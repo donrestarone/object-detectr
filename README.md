@@ -54,6 +54,8 @@ grab dependencies
 pip install TensorFlow==1.15 lxml pillow matplotlib jupyter contextlib2 cython tf_slim
 # alternatively you can make sure that pip installs the libraries compatible with your specific python version (3.7.9 is recommended in our case)
 python -m pip install TensorFlow==1.15 lxml pillow matplotlib jupyter contextlib2 cython tf_slim
+# sometimes on EC2 there is not enough cache for installing these heavy libraries. pass the no cache option if installation is failing silently
+python -m pip install --no-cache-dir TensorFlow==1.15 lxml pillow matplotlib jupyter contextlib2 cython tf_slim
 ```
 
 ### FOR THE RAILS SIDE
