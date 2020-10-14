@@ -59,8 +59,8 @@ python -m pip install --no-cache-dir TensorFlow==1.15 lxml pillow matplotlib jup
 ```
 
 ### FOR THE RAILS SIDE
-If you are setting up rails from scratch (like on a server) you can use this gist: https://gist.github.com/donrestarone/0ebe1e87b39f0f92f850c1da861e85de
-
+1. If you are setting up rails from scratch (like on a server) you can use this gist: https://gist.github.com/donrestarone/0ebe1e87b39f0f92f850c1da861e85de
+2. for a production nginx configuration (super hacky) you can use this gist: https://gist.github.com/donrestarone/e8b1157dc4a3adffe3450edd55a6f315
 ```bash
 cd object_detectr/potash
 bundle install
