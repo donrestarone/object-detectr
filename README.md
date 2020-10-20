@@ -89,6 +89,12 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
+The EnvironmentFile should look something like this (~/.potash_config)
+``` bash
+RAILS_ENV=production
+RAILS_SERVE_STATIC_FILES=true
+```
+
 After double checking the environment file works and RAILS_ENV is pointing to production & RAILS_SERVE_STATIC_FILES=true, reload systemd and start puma
 ```bash
 sudo systemctl daemon-reload
