@@ -69,7 +69,7 @@ rails db:migrate
 rails s
 ```
 ### Running in production
-create systemctl service for starting puma on boot. make sure ExecStart/ExecStop are pointing to the rbenv binary and the User has ownership over the var/www directory
+create systemctl service for starting puma on boot. make sure ExecStart/ExecStop are pointing to the rbenv binary and the User has ownership over the var/www directory. Create the systemd file at: /etc/systemd/system/puma.service
 ``` bash
 [Unit]
 Description=Puma Rails Server
@@ -79,6 +79,7 @@ After=network.target
 Type=simple
 User=ubuntu
 WorkingDirectory=/var/www/object-detectr/potash
+EnvironmentFile=/home/ubuntu/.potash_config
 ExecStart=/home/ubuntu/.rbenv/bin/rbenv exec bundle exec puma -C /var/www/object-detectr/potash/config/puma.rb
 ExecStop=/home/ubuntu/.rbenv/bin/rbenv exec bundle exec pumactl -S /var/www/object-detectr/potash/tmp/pids/puma.state stop
 TimeoutSec=15
@@ -88,7 +89,7 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-After double checking the RAILS_ENV is pointing to production & RAILS_SERVE_STATIC_FILES=true, reload systemd and start puma
+After double checking the environment file works and RAILS_ENV is pointing to production & RAILS_SERVE_STATIC_FILES=true, reload systemd and start puma
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable puma.service
