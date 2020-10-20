@@ -68,6 +68,26 @@ rails db:create
 rails db:migrate
 rails s
 ```
+### Running in production
+create systemctl service for starting puma on boot. make sure ExecStart/ExecStop are pointing to the rbenv binary and the User has ownership over the var/www directory
+``` bash
+[Unit]
+Description=Puma Rails Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/var/www/object-detectr/potash
+ExecStart=/home/ubuntu/.rbenv/bin/rbenv exec bundle exec puma -C /var/www/object-detectr/potash/config/puma.rb
+ExecStop=/home/ubuntu/.rbenv/bin/rbenv exec bundle exec pumactl -S /var/www/object-detectr/potash/tmp/pids/puma.state stop
+TimeoutSec=15
+Restart=always
+
+
+[Install]
+WantedBy=multi-user.target
+```
 
 <a name="troubleshooting"/>
 
