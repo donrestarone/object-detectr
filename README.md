@@ -95,6 +95,31 @@ sudo systemctl enable puma.service
 sudo systemctl start puma.service
 sudo systemctl status puma.service
 ```
+Create the nginx virtualhost configuration for reverse proxying requests to the puma/rails server
+``` bash
+sudo nano /etc/nginx/sites-available/YOUR_SITE.conf
+```
+fill in the file with the details, proxying requests coming to port 80
+```bash
+server {
+    listen 80;
+    server_name  potassium.shashike.me;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+symlink the virtualhost, test and restart nginx
+``` bash
+sudo ln -s /etc/nginx/sites-available/potassium.shashike.me.conf /etc/nginx/sites-enabled/potassium.shashike.me.conf
+sudo service nginx configtest
+sudo service nginx reload
+```
 
 <a name="troubleshooting"/>
 
