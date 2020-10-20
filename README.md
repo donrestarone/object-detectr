@@ -88,7 +88,7 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-After double checking the RAILS_ENV is pointing to production, reload systemd and start puma
+After double checking the RAILS_ENV is pointing to production & RAILS_SERVE_STATIC_FILES=true, reload systemd and start puma
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable puma.service
