@@ -127,6 +127,11 @@ sudo ln -s /etc/nginx/sites-available/potassium.shashike.me.conf /etc/nginx/site
 sudo service nginx configtest
 sudo service nginx reload
 ```
+setup SSL with Lets Encrypt and Certbot
+```bash
+sudo apt-get install python3-certbot-nginx
+sudo certbot --nginx -d your-domain.com
+```
 
 <a name="troubleshooting"/>
 
