@@ -137,7 +137,7 @@ sudo certbot --nginx -d your-domain.com
 
 ## troubleshooting
 
-1. if Python cannot be found when Ruby makes the system call in potash/app/controllers/images_controller.rb 
+1. Most of the time python in your shell and python invoked from ruby's system call are two different pythons. If the application simply fails without error it means that Python cannot be found when Ruby makes the system call in potash/app/controllers/images_controller.rb 
 you can try explicitly pointing to the python version in your $PATH like so:
 ```ruby
     system("cd #{path_to_python} ; /home/yourUserName/.pyenv/shims/python run.py #{file_name}")
