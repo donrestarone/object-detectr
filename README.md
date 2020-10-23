@@ -132,6 +132,7 @@ setup SSL with Lets Encrypt and Certbot
 ```bash
 sudo apt-get install python3-certbot-nginx
 sudo certbot --nginx -d your-domain.com
+sudo certbot renew
 ```
 
 <a name="troubleshooting"/>
